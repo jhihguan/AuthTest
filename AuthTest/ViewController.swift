@@ -8,11 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, AlertShowable {
+class ViewController: UIViewController, NetworkRequestable, AlertShowable {
 
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    private let session = URLSession.shared
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -40,34 +39,18 @@ class ViewController: UIViewController, AlertShowable {
             request.httpMethod = "POST"
             request.httpBody = try JSONSerialization.data(withJSONObject: ["name": account, "pwd": password], options: .init(rawValue: 0))
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            session.dataTask(with: request, completionHandler: { [weak self] (data, response, error) in
+            self.request(request, complete: { [weak self] (responseDictionary, error) in
                 if let error = error {
-                    print(error)
-                    self?.showAlert("網路錯誤")
+                    self?.showAlert(error.message)
                     return
                 }
-                let httpResponse = response as! HTTPURLResponse
-                guard 200 ..< 300 ~= httpResponse.statusCode else {
-                    self?.showAlert("伺服器錯誤")
-                    return
-                }
-                guard let data = data else {
-                    self?.showAlert("資料錯誤")
-                    return
-                }
-                do {
-                    let responseDictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
-                    guard let dict = responseDictionary?["token"] as? [String: Any] else {
-                        self?.showAlert("回傳格式錯誤")
-                        return
-                    }
-                    let session = UserSession.init(dict)
-                    print(session)
-                } catch {
+                guard let dict = responseDictionary?["token"] as? [String: Any],
+                    let session = UserSession.init(dict) else {
                     self?.showAlert("回傳格式錯誤")
+                    return
                 }
-            }).resume()
-            
+                print(session)
+            })
         } catch {
             showAlert("處理參數錯誤")
         }

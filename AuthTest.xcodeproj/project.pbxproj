@@ -15,6 +15,8 @@
 		202FA4AB1E9D09CC00CC6523 /* AuthTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4AA1E9D09CC00CC6523 /* AuthTestTests.swift */; };
 		202FA4B71E9D0CA600CC6523 /* AlertShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4B61E9D0CA600CC6523 /* AlertShowable.swift */; };
 		202FA4BA1E9D0EF200CC6523 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4B91E9D0EF200CC6523 /* SessionModel.swift */; };
+		202FA4BC1E9D176000CC6523 /* NetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4BB1E9D176000CC6523 /* NetworkRequestable.swift */; };
+		202FA4BE1E9D1E5500CC6523 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4BD1E9D1E5500CC6523 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		202FA4AC1E9D09CC00CC6523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		202FA4B61E9D0CA600CC6523 /* AlertShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertShowable.swift; sourceTree = "<group>"; };
 		202FA4B91E9D0EF200CC6523 /* SessionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
+		202FA4BB1E9D176000CC6523 /* NetworkRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestable.swift; sourceTree = "<group>"; };
+		202FA4BD1E9D1E5500CC6523 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				202FA4B61E9D0CA600CC6523 /* AlertShowable.swift */,
+				202FA4BB1E9D176000CC6523 /* NetworkRequestable.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				202FA4B91E9D0EF200CC6523 /* SessionModel.swift */,
+				202FA4BD1E9D1E5500CC6523 /* NetworkError.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -223,7 +229,9 @@
 			files = (
 				202FA4981E9D09CC00CC6523 /* ViewController.swift in Sources */,
 				202FA4B71E9D0CA600CC6523 /* AlertShowable.swift in Sources */,
+				202FA4BE1E9D1E5500CC6523 /* NetworkError.swift in Sources */,
 				202FA4BA1E9D0EF200CC6523 /* SessionModel.swift in Sources */,
+				202FA4BC1E9D176000CC6523 /* NetworkRequestable.swift in Sources */,
 				202FA4961E9D09CC00CC6523 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

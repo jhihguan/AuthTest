@@ -41,7 +41,7 @@
                                     <constraint firstAttribute="height" constant="44" id="yCY-j6-k59"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Login In">
+                                <state key="normal" title="Log In">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
