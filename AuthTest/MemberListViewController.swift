@@ -41,6 +41,11 @@ class MemberListViewController: UIViewController, NetworkRequestable, AlertShowa
         tableView.addSubview(refreshControl)
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNavigationBarItem()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

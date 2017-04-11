@@ -7,19 +7,28 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    func updateRootViewController(_ vc: UIViewController) {
-        window?.rootViewController = vc
+    func loginSuccess(_ vc: MemberListViewController) {
+        let leftMenu = SideMenuViewController()
+        SlideMenuOptions.contentViewDrag = true
+        window?.rootViewController = SlideMenuController(mainViewController: UINavigationController(rootViewController: vc), leftMenuViewController: leftMenu)
+        window?.makeKeyAndVisible()
+    }
+    
+    func resetToLogin() {
+        window?.rootViewController = LoginViewController()
         window?.makeKeyAndVisible()
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        resetToLogin()
         return true
     }
 

@@ -1,27 +1,36 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  AuthTest
 //
-//  Created by Wane Wang on 4/11/17.
+//  Created by Wane Wang on 4/12/17.
 //  Copyright © 2017 Wane. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, NetworkRequestable, AlertShowable {
-
+class LoginViewController: UIViewController, NetworkRequestable, AlertShowable {
+    
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    init() {
+        super.init(nibName: "\(LoginViewController.self)", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func loginAction(_ sender: Any) {
         guard let account = accountTextField.text,
             let password = passwordTextField.text else {
@@ -46,14 +55,14 @@ class ViewController: UIViewController, NetworkRequestable, AlertShowable {
                 }
                 guard let dict = responseDictionary?["token"] as? [String: Any],
                     let session = UserSession.init(dict) else {
-                    self?.showAlert("回傳格式錯誤")
-                    return
+                        self?.showAlert("回傳格式錯誤")
+                        return
                 }
                 let memberListViewController = MemberListViewController(session)
                 guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                     return
                 }
-                appDelegate.updateRootViewController(memberListViewController)
+                appDelegate.loginSuccess(memberListViewController)
             })
         } catch {
             showAlert("處理參數錯誤")
@@ -61,4 +70,3 @@ class ViewController: UIViewController, NetworkRequestable, AlertShowable {
     }
 
 }
-
