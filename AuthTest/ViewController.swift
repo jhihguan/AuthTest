@@ -49,7 +49,11 @@ class ViewController: UIViewController, NetworkRequestable, AlertShowable {
                     self?.showAlert("回傳格式錯誤")
                     return
                 }
-                print(session)
+                let memberListViewController = MemberListViewController(session)
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                    return
+                }
+                appDelegate.updateRootViewController(memberListViewController)
             })
         } catch {
             showAlert("處理參數錯誤")

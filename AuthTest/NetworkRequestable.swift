@@ -32,7 +32,9 @@ extension NetworkRequestable where Self: UIViewController {
                 guard let responseDictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
                     return complete(nil, .responseError)
                 }
-                complete(responseDictionary, nil)
+                DispatchQueue.main.async {
+                    complete(responseDictionary, nil)
+                }
             } catch {
                 complete(nil, .responseError)
             }

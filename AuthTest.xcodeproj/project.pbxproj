@@ -17,6 +17,9 @@
 		202FA4BA1E9D0EF200CC6523 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4B91E9D0EF200CC6523 /* SessionModel.swift */; };
 		202FA4BC1E9D176000CC6523 /* NetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4BB1E9D176000CC6523 /* NetworkRequestable.swift */; };
 		202FA4BE1E9D1E5500CC6523 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4BD1E9D1E5500CC6523 /* NetworkError.swift */; };
+		202FA4C11E9D2C7400CC6523 /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4BF1E9D2C7400CC6523 /* MemberListViewController.swift */; };
+		202FA4C21E9D2C7400CC6523 /* MemberListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202FA4C01E9D2C7400CC6523 /* MemberListViewController.xib */; };
+		202FA4C41E9D2F8400CC6523 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4C31E9D2F8400CC6523 /* Member.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		202FA4B91E9D0EF200CC6523 /* SessionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
 		202FA4BB1E9D176000CC6523 /* NetworkRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestable.swift; sourceTree = "<group>"; };
 		202FA4BD1E9D1E5500CC6523 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		202FA4BF1E9D2C7400CC6523 /* MemberListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
+		202FA4C01E9D2C7400CC6523 /* MemberListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberListViewController.xib; sourceTree = "<group>"; };
+		202FA4C31E9D2F8400CC6523 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 		202FA4941E9D09CC00CC6523 /* AuthTest */ = {
 			isa = PBXGroup;
 			children = (
+				202FA4BD1E9D1E5500CC6523 /* NetworkError.swift */,
 				202FA4B81E9D0ED000CC6523 /* Model */,
 				202FA4B51E9D0C7900CC6523 /* Protocol */,
 				202FA4951E9D09CC00CC6523 /* AppDelegate.swift */,
@@ -93,6 +100,8 @@
 				202FA49C1E9D09CC00CC6523 /* Assets.xcassets */,
 				202FA49E1E9D09CC00CC6523 /* LaunchScreen.storyboard */,
 				202FA4A11E9D09CC00CC6523 /* Info.plist */,
+				202FA4BF1E9D2C7400CC6523 /* MemberListViewController.swift */,
+				202FA4C01E9D2C7400CC6523 /* MemberListViewController.xib */,
 			);
 			path = AuthTest;
 			sourceTree = "<group>";
@@ -119,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				202FA4B91E9D0EF200CC6523 /* SessionModel.swift */,
-				202FA4BD1E9D1E5500CC6523 /* NetworkError.swift */,
+				202FA4C31E9D2F8400CC6523 /* Member.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -207,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				202FA4C21E9D2C7400CC6523 /* MemberListViewController.xib in Resources */,
 				202FA4A01E9D09CC00CC6523 /* LaunchScreen.storyboard in Resources */,
 				202FA49D1E9D09CC00CC6523 /* Assets.xcassets in Resources */,
 				202FA49B1E9D09CC00CC6523 /* Main.storyboard in Resources */,
@@ -229,10 +239,12 @@
 			files = (
 				202FA4981E9D09CC00CC6523 /* ViewController.swift in Sources */,
 				202FA4B71E9D0CA600CC6523 /* AlertShowable.swift in Sources */,
+				202FA4C11E9D2C7400CC6523 /* MemberListViewController.swift in Sources */,
 				202FA4BE1E9D1E5500CC6523 /* NetworkError.swift in Sources */,
 				202FA4BA1E9D0EF200CC6523 /* SessionModel.swift in Sources */,
 				202FA4BC1E9D176000CC6523 /* NetworkRequestable.swift in Sources */,
 				202FA4961E9D09CC00CC6523 /* AppDelegate.swift in Sources */,
+				202FA4C41E9D2F8400CC6523 /* Member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
