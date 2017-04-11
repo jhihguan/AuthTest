@@ -13,6 +13,8 @@
 		202FA49D1E9D09CC00CC6523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202FA49C1E9D09CC00CC6523 /* Assets.xcassets */; };
 		202FA4A01E9D09CC00CC6523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202FA49E1E9D09CC00CC6523 /* LaunchScreen.storyboard */; };
 		202FA4AB1E9D09CC00CC6523 /* AuthTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4AA1E9D09CC00CC6523 /* AuthTestTests.swift */; };
+		202FA4B71E9D0CA600CC6523 /* AlertShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4B61E9D0CA600CC6523 /* AlertShowable.swift */; };
+		202FA4BA1E9D0EF200CC6523 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4B91E9D0EF200CC6523 /* SessionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		202FA4A61E9D09CC00CC6523 /* AuthTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		202FA4AA1E9D09CC00CC6523 /* AuthTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTestTests.swift; sourceTree = "<group>"; };
 		202FA4AC1E9D09CC00CC6523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		202FA4B61E9D0CA600CC6523 /* AlertShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertShowable.swift; sourceTree = "<group>"; };
+		202FA4B91E9D0EF200CC6523 /* SessionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 		202FA4941E9D09CC00CC6523 /* AuthTest */ = {
 			isa = PBXGroup;
 			children = (
+				202FA4B81E9D0ED000CC6523 /* Model */,
+				202FA4B51E9D0C7900CC6523 /* Protocol */,
 				202FA4951E9D09CC00CC6523 /* AppDelegate.swift */,
 				202FA4971E9D09CC00CC6523 /* ViewController.swift */,
 				202FA4991E9D09CC00CC6523 /* Main.storyboard */,
@@ -94,6 +100,22 @@
 				202FA4AC1E9D09CC00CC6523 /* Info.plist */,
 			);
 			path = AuthTestTests;
+			sourceTree = "<group>";
+		};
+		202FA4B51E9D0C7900CC6523 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				202FA4B61E9D0CA600CC6523 /* AlertShowable.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		202FA4B81E9D0ED000CC6523 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				202FA4B91E9D0EF200CC6523 /* SessionModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +222,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				202FA4981E9D09CC00CC6523 /* ViewController.swift in Sources */,
+				202FA4B71E9D0CA600CC6523 /* AlertShowable.swift in Sources */,
+				202FA4BA1E9D0EF200CC6523 /* SessionModel.swift in Sources */,
 				202FA4961E9D09CC00CC6523 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
