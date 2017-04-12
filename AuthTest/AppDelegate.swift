@@ -14,10 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    func loginSuccess(_ vc: MemberListViewController) {
-        let leftMenu = SideMenuViewController()
+    func loginSuccess(_ session: UserSession) {
+        let leftMenu = SideMenuViewController(session)
         SlideMenuOptions.contentViewDrag = true
-        window?.rootViewController = SlideMenuController(mainViewController: UINavigationController(rootViewController: vc), leftMenuViewController: leftMenu)
+        window?.rootViewController = SlideMenuController(mainViewController: UINavigationController(rootViewController: MemberListViewController(session)), leftMenuViewController: leftMenu)
         window?.makeKeyAndVisible()
     }
     

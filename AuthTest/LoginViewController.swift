@@ -33,7 +33,8 @@ class LoginViewController: UIViewController, NetworkRequestable, AlertShowable {
     
     @IBAction func loginAction(_ sender: Any) {
         guard let account = accountTextField.text,
-            let password = passwordTextField.text else {
+            let password = passwordTextField.text,
+            !account.isEmpty, !password.isEmpty else {
                 showAlert("請輸入帳號及密碼")
                 return
         }
@@ -58,11 +59,10 @@ class LoginViewController: UIViewController, NetworkRequestable, AlertShowable {
                         self?.showAlert("回傳格式錯誤")
                         return
                 }
-                let memberListViewController = MemberListViewController(session)
                 guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                     return
                 }
-                appDelegate.loginSuccess(memberListViewController)
+                appDelegate.loginSuccess(session)
             })
         } catch {
             showAlert("處理參數錯誤")

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		202E57791E9E4F9F0060DD4F /* MemberCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E57771E9E4F9F0060DD4F /* MemberCreateViewController.swift */; };
+		202E577A1E9E4F9F0060DD4F /* MemberCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202E57781E9E4F9F0060DD4F /* MemberCreateViewController.xib */; };
 		202FA4961E9D09CC00CC6523 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4951E9D09CC00CC6523 /* AppDelegate.swift */; };
 		202FA49D1E9D09CC00CC6523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202FA49C1E9D09CC00CC6523 /* Assets.xcassets */; };
 		202FA4A01E9D09CC00CC6523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202FA49E1E9D09CC00CC6523 /* LaunchScreen.storyboard */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		202E57771E9E4F9F0060DD4F /* MemberCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCreateViewController.swift; sourceTree = "<group>"; };
+		202E57781E9E4F9F0060DD4F /* MemberCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberCreateViewController.xib; sourceTree = "<group>"; };
 		202FA4921E9D09CC00CC6523 /* AuthTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		202FA4951E9D09CC00CC6523 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		202FA49C1E9D09CC00CC6523 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				202FA4A11E9D09CC00CC6523 /* Info.plist */,
 				202FA4BF1E9D2C7400CC6523 /* MemberListViewController.swift */,
 				202FA4C01E9D2C7400CC6523 /* MemberListViewController.xib */,
+				202E57771E9E4F9F0060DD4F /* MemberCreateViewController.swift */,
+				202E57781E9E4F9F0060DD4F /* MemberCreateViewController.xib */,
 				2093B4EE1E9D35AA0023246B /* SideMenuViewController.swift */,
 				2093B4EF1E9D35AA0023246B /* SideMenuViewController.xib */,
 				2093B4F21E9D3A8B0023246B /* LoginViewController.swift */,
@@ -275,6 +281,7 @@
 				202FA4C21E9D2C7400CC6523 /* MemberListViewController.xib in Resources */,
 				2093B4F51E9D3A8B0023246B /* LoginViewController.xib in Resources */,
 				202FA4A01E9D09CC00CC6523 /* LaunchScreen.storyboard in Resources */,
+				202E577A1E9E4F9F0060DD4F /* MemberCreateViewController.xib in Resources */,
 				202FA49D1E9D09CC00CC6523 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +397,7 @@
 				202FA4C11E9D2C7400CC6523 /* MemberListViewController.swift in Sources */,
 				2093B4ED1E9D352E0023246B /* UIViewControllerSideMenu.swift in Sources */,
 				202FA4BE1E9D1E5500CC6523 /* NetworkError.swift in Sources */,
+				202E57791E9E4F9F0060DD4F /* MemberCreateViewController.swift in Sources */,
 				202FA4BA1E9D0EF200CC6523 /* SessionModel.swift in Sources */,
 				202FA4BC1E9D176000CC6523 /* NetworkRequestable.swift in Sources */,
 				202FA4961E9D09CC00CC6523 /* AppDelegate.swift in Sources */,

@@ -87,6 +87,7 @@ extension MemberListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memberCell", for: indexPath)
         let member = members[indexPath.row]
         cell.textLabel?.text = member.name
+        cell.detailTextLabel?.text = "\(member.id)"
         return cell
     }
     
