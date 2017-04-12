@@ -12,7 +12,7 @@ class LoginViewController: UIViewController, NetworkRequestable, AlertShowable {
     
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+    private let userDefaults: UserDefaults = .standard
     init() {
         super.init(nibName: "\(LoginViewController.self)", bundle: nil)
     }
@@ -59,6 +59,9 @@ class LoginViewController: UIViewController, NetworkRequestable, AlertShowable {
                         self?.showAlert("回傳格式錯誤")
                         return
                 }
+                self?.userDefaults.set(account, type: .account)
+                self?.userDefaults.set(password, type: .password)
+                self?.userDefaults.set(dict, type: .session)
                 guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                     return
                 }

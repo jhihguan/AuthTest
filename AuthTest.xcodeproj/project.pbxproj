@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		202E57791E9E4F9F0060DD4F /* MemberCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E57771E9E4F9F0060DD4F /* MemberCreateViewController.swift */; };
 		202E577A1E9E4F9F0060DD4F /* MemberCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202E57781E9E4F9F0060DD4F /* MemberCreateViewController.xib */; };
+		202E577D1E9E866B0060DD4F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E577C1E9E866B0060DD4F /* UserData.swift */; };
+		202E577F1E9E86DE0060DD4F /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E577E1E9E86DE0060DD4F /* UserDefaultsExtension.swift */; };
 		202FA4961E9D09CC00CC6523 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4951E9D09CC00CC6523 /* AppDelegate.swift */; };
 		202FA49D1E9D09CC00CC6523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202FA49C1E9D09CC00CC6523 /* Assets.xcassets */; };
 		202FA4A01E9D09CC00CC6523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202FA49E1E9D09CC00CC6523 /* LaunchScreen.storyboard */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		202E57771E9E4F9F0060DD4F /* MemberCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCreateViewController.swift; sourceTree = "<group>"; };
 		202E57781E9E4F9F0060DD4F /* MemberCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberCreateViewController.xib; sourceTree = "<group>"; };
+		202E577C1E9E866B0060DD4F /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		202E577E1E9E86DE0060DD4F /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		202FA4921E9D09CC00CC6523 /* AuthTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		202FA4951E9D09CC00CC6523 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		202FA49C1E9D09CC00CC6523 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		202E577B1E9E86570060DD4F /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				202FA4BD1E9D1E5500CC6523 /* NetworkError.swift */,
+				202E577C1E9E866B0060DD4F /* UserData.swift */,
+			);
+			name = Enum;
+			sourceTree = "<group>";
+		};
 		202FA4891E9D09CB00CC6523 = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +126,7 @@
 		202FA4941E9D09CC00CC6523 /* AuthTest */ = {
 			isa = PBXGroup;
 			children = (
-				202FA4BD1E9D1E5500CC6523 /* NetworkError.swift */,
+				202E577B1E9E86570060DD4F /* Enum */,
 				2093B4EB1E9D35100023246B /* Extension */,
 				202FA4B81E9D0ED000CC6523 /* Model */,
 				202FA4B51E9D0C7900CC6523 /* Protocol */,
@@ -164,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				2093B4EC1E9D352E0023246B /* UIViewControllerSideMenu.swift */,
+				202E577E1E9E86DE0060DD4F /* UserDefaultsExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -399,11 +413,13 @@
 				202FA4BE1E9D1E5500CC6523 /* NetworkError.swift in Sources */,
 				202E57791E9E4F9F0060DD4F /* MemberCreateViewController.swift in Sources */,
 				202FA4BA1E9D0EF200CC6523 /* SessionModel.swift in Sources */,
+				202E577D1E9E866B0060DD4F /* UserData.swift in Sources */,
 				202FA4BC1E9D176000CC6523 /* NetworkRequestable.swift in Sources */,
 				202FA4961E9D09CC00CC6523 /* AppDelegate.swift in Sources */,
 				2093B4F01E9D35AA0023246B /* SideMenuViewController.swift in Sources */,
 				202FA4C41E9D2F8400CC6523 /* Member.swift in Sources */,
 				2093B4F41E9D3A8B0023246B /* LoginViewController.swift in Sources */,
+				202E577F1E9E86DE0060DD4F /* UserDefaultsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
