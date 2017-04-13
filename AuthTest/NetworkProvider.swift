@@ -26,6 +26,10 @@ class NetworkProvider {
         return userSession != nil
     }
     
+    func isSessionTimeout() -> Bool {
+        return userSession!.expTime < Date()
+    }
+    
     func logout() {
         userDefaults.set(nil, type: .account)
         userDefaults.set(nil, type: .password)
@@ -66,6 +70,16 @@ class NetworkProvider {
     
     func getMembers(complete: @escaping ([Member], NetworkError?) -> Void) {
         var result: [Member] = []
+        if isSessionTimeout() {
+            nenewToken(complete: { [weak self] (error) in
+                if let error = error {
+                    complete(result, error)
+                } else {
+                    self?.getMembers(complete: complete)
+                }
+            })
+            return
+        }
         guard let url = URL(string: "http://52.197.192.141:3443/member") else {
             complete(result, .url)
             return
@@ -93,6 +107,16 @@ class NetworkProvider {
     }
     
     func createMember(username: String, complete: @escaping (NetworkError?) -> Void) {
+        if isSessionTimeout() {
+            nenewToken(complete: { [weak self] (error) in
+                if let error = error {
+                    complete(error)
+                } else {
+                    self?.createMember(username: username, complete: complete)
+                }
+            })
+            return
+        }
         guard let url = URL(string: "http://52.197.192.141:3443/member") else {
             complete(.url)
             return
@@ -121,6 +145,18 @@ class NetworkProvider {
             })
         } catch {
             complete(.parameter)
+        }
+    }
+    
+    private func nenewToken(complete: @escaping (NetworkError?) -> Void) {
+        let defaults = UserDefaults.standard
+        guard let account = defaults.string(type: .account),
+            let password = defaults.string(type: .password) else {
+                complete(.token)
+                return
+        }
+        login(account: account, password: password) { (error) in
+            complete(error)
         }
     }
     
