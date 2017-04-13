@@ -13,25 +13,25 @@ import SlideMenuControllerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private var networkProvider: NetworkProvider!
     
-    func loginSuccess(_ session: UserSession) {
-        let leftMenu = SideMenuViewController(session)
+    func loginSuccess() {
+        let leftMenu = SideMenuViewController(networkProvider)
         SlideMenuOptions.contentViewDrag = true
-        window?.rootViewController = SlideMenuController(mainViewController: UINavigationController(rootViewController: MemberListViewController(session)), leftMenuViewController: leftMenu)
+        window?.rootViewController = SlideMenuController(mainViewController: UINavigationController(rootViewController: MemberListViewController(networkProvider)), leftMenuViewController: leftMenu)
         window?.makeKeyAndVisible()
     }
     
     func resetToLogin() {
-        window?.rootViewController = LoginViewController()
+        window?.rootViewController = LoginViewController(networkProvider)
         window?.makeKeyAndVisible()
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let defaults = UserDefaults.standard
-        if let sessionDictionary = defaults.get(type: .session) as? [String: Any],
-            let session = UserSession.init(sessionDictionary) {
-            loginSuccess(session)
+        networkProvider = NetworkProvider(networkSession: URLSession.shared, userDefaults: UserDefaults.standard)
+        if networkProvider.isUserLogin() {
+            loginSuccess()
         } else {
             resetToLogin()
         }

@@ -12,4 +12,5 @@ enum UserData: String {
     case account = "account"
     case password = "password"
     case session = "session"
+    case token = "token"
 }

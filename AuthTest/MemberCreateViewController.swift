@@ -8,13 +8,13 @@
 
 import UIKit
 
-class MemberCreateViewController: UIViewController, AlertShowable, NetworkRequestable {
+class MemberCreateViewController: UIViewController, AlertShowable {
 
     @IBOutlet weak var nameTextField: UITextField!
-    private let session: UserSession
+    private let provider: NetworkProvider
     
-    init(_ session: UserSession) {
-        self.session = session
+    init(_ provider: NetworkProvider) {
+        self.provider = provider
         super.init(nibName: "\(MemberCreateViewController.self)", bundle: nil)
     }
     
@@ -44,33 +44,14 @@ class MemberCreateViewController: UIViewController, AlertShowable, NetworkReques
             showAlert("請輸入名稱")
             return
         }
-        guard let url = URL(string: "http://52.197.192.141:3443/member") else {
-            showAlert("發生錯誤")
-            return
-        }
         nameTextField.resignFirstResponder()
-        do {
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.httpBody = try JSONSerialization.data(withJSONObject: ["name": username], options: .init(rawValue: 0))
-            request.addValue(session.token, forHTTPHeaderField: "Authorization")
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            self.request(request, complete: { [weak self] (responseDictionary, error) in
-                if let error = error {
-                    self?.showAlert(error.message)
-                    return
-                }
-                guard let code = responseDictionary?["code"] as? String,
-                    code == "success" else {
-                        self?.showAlert("創建錯誤")
-                        return
-                }
+        provider.createMember(username: username) { [weak self] (error) in
+            if let error = error {
+                self?.showAlert(error.message)
+            } else {
                 self?.showAlert("創建成功")
-            })
-        } catch {
-            showAlert("處理參數錯誤")
+            }
         }
-        
     }
 
     /*

@@ -8,12 +8,14 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, NetworkRequestable, AlertShowable {
+class LoginViewController: UIViewController, AlertShowable {
     
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    private let userDefaults: UserDefaults = .standard
-    init() {
+    private let provider: NetworkProvider
+    
+    init(_ provider: NetworkProvider) {
+        self.provider = provider
         super.init(nibName: "\(LoginViewController.self)", bundle: nil)
     }
     
@@ -40,35 +42,17 @@ class LoginViewController: UIViewController, NetworkRequestable, AlertShowable {
         }
         accountTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
-        guard let url = URL(string: "http://52.197.192.141:3443") else {
-            showAlert("發生錯誤")
-            return
-        }
-        do {
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.httpBody = try JSONSerialization.data(withJSONObject: ["name": account, "pwd": password], options: .init(rawValue: 0))
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            self.request(request, complete: { [weak self] (responseDictionary, error) in
-                if let error = error {
-                    self?.showAlert(error.message)
-                    return
-                }
-                guard let dict = responseDictionary?["token"] as? [String: Any],
-                    let session = UserSession.init(dict) else {
-                        self?.showAlert("回傳格式錯誤")
-                        return
-                }
-                self?.userDefaults.set(account, type: .account)
-                self?.userDefaults.set(password, type: .password)
-                self?.userDefaults.set(dict, type: .session)
+        provider.login(account: account, password: password) { [weak self] (error) in
+            if let error = error {
+                self?.showAlert(error.message)
+            } else {
                 guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                    self?.showAlert("發生不可能錯誤\n請重試！")
                     return
                 }
-                appDelegate.loginSuccess(session)
-            })
-        } catch {
-            showAlert("處理參數錯誤")
+                appDelegate.loginSuccess()
+            }
+            
         }
     }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemberListViewController: UIViewController, NetworkRequestable, AlertShowable {
+class MemberListViewController: UIViewController, AlertShowable {
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -16,15 +16,15 @@ class MemberListViewController: UIViewController, NetworkRequestable, AlertShowa
             tableView.register(UITableViewCell.self, forCellReuseIdentifier: "memberCell")
         }
     }
-    private let session: UserSession
+    private let provider: NetworkProvider
     internal var members: [Member] = [] {
         didSet {
             tableView.reloadData()
         }
     }
     
-    init(_ session: UserSession) {
-        self.session = session
+    init(_ provider: NetworkProvider) {
+        self.provider = provider
         super.init(nibName: "\(MemberListViewController.self)", bundle: nil)
     }
     
@@ -54,24 +54,12 @@ class MemberListViewController: UIViewController, NetworkRequestable, AlertShowa
     
     func loadMember(_ sender: UIRefreshControl) {
         sender.endRefreshing()
-        guard let url = URL(string: "http://52.197.192.141:3443/member") else {
-            showAlert("發生錯誤")
-            return
-        }
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.addValue(session.token, forHTTPHeaderField: "Authorization")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        self.request(request) { [weak self] (responseDictionary, error) in
+        provider.getMembers { [weak self] (members, error) in
             if let error = error {
                 self?.showAlert(error.message)
-                return
+            } else {
+                self?.members = members
             }
-            guard let dict = responseDictionary?["data"] as? [[String: Any]] else {
-                    self?.showAlert("回傳格式錯誤")
-                    return
-            }
-            self?.members = dict.flatMap { Member($0) }
         }
     }
 

@@ -17,7 +17,6 @@
 		202FA4AB1E9D09CC00CC6523 /* AuthTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4AA1E9D09CC00CC6523 /* AuthTestTests.swift */; };
 		202FA4B71E9D0CA600CC6523 /* AlertShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4B61E9D0CA600CC6523 /* AlertShowable.swift */; };
 		202FA4BA1E9D0EF200CC6523 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4B91E9D0EF200CC6523 /* SessionModel.swift */; };
-		202FA4BC1E9D176000CC6523 /* NetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4BB1E9D176000CC6523 /* NetworkRequestable.swift */; };
 		202FA4BE1E9D1E5500CC6523 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4BD1E9D1E5500CC6523 /* NetworkError.swift */; };
 		202FA4C11E9D2C7400CC6523 /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FA4BF1E9D2C7400CC6523 /* MemberListViewController.swift */; };
 		202FA4C21E9D2C7400CC6523 /* MemberListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202FA4C01E9D2C7400CC6523 /* MemberListViewController.xib */; };
@@ -27,6 +26,7 @@
 		2093B4F11E9D35AA0023246B /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2093B4EF1E9D35AA0023246B /* SideMenuViewController.xib */; };
 		2093B4F41E9D3A8B0023246B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2093B4F21E9D3A8B0023246B /* LoginViewController.swift */; };
 		2093B4F51E9D3A8B0023246B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2093B4F31E9D3A8B0023246B /* LoginViewController.xib */; };
+		20F8710C1E9FB15800EDEB12 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8710B1E9FB15800EDEB12 /* NetworkProvider.swift */; };
 		484A5A58DE014E3F04CFEFA1 /* Pods_AuthTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F03210309CB6FE4A4C407B7F /* Pods_AuthTestTests.framework */; };
 		57838DF88F680785FF2FE2F3 /* Pods_AuthTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AE102652146DDC90681DCF /* Pods_AuthTest.framework */; };
 /* End PBXBuildFile section */
@@ -56,7 +56,6 @@
 		202FA4AC1E9D09CC00CC6523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		202FA4B61E9D0CA600CC6523 /* AlertShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertShowable.swift; sourceTree = "<group>"; };
 		202FA4B91E9D0EF200CC6523 /* SessionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
-		202FA4BB1E9D176000CC6523 /* NetworkRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestable.swift; sourceTree = "<group>"; };
 		202FA4BD1E9D1E5500CC6523 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		202FA4BF1E9D2C7400CC6523 /* MemberListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
 		202FA4C01E9D2C7400CC6523 /* MemberListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberListViewController.xib; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		2093B4EF1E9D35AA0023246B /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		2093B4F21E9D3A8B0023246B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2093B4F31E9D3A8B0023246B /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		20F8710B1E9FB15800EDEB12 /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		24AE102652146DDC90681DCF /* Pods_AuthTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C999FB5F30645D7B74DF91C /* Pods-AuthTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AuthTestTests/Pods-AuthTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		530CB7105D18149C90405546 /* Pods-AuthTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AuthTestTests/Pods-AuthTestTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +126,7 @@
 		202FA4941E9D09CC00CC6523 /* AuthTest */ = {
 			isa = PBXGroup;
 			children = (
+				20F8710A1E9FB14B00EDEB12 /* Network */,
 				202E577B1E9E86570060DD4F /* Enum */,
 				2093B4EB1E9D35100023246B /* Extension */,
 				202FA4B81E9D0ED000CC6523 /* Model */,
@@ -159,7 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				202FA4B61E9D0CA600CC6523 /* AlertShowable.swift */,
-				202FA4BB1E9D176000CC6523 /* NetworkRequestable.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -180,6 +180,14 @@
 				202E577E1E9E86DE0060DD4F /* UserDefaultsExtension.swift */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		20F8710A1E9FB14B00EDEB12 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				20F8710B1E9FB15800EDEB12 /* NetworkProvider.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 		78FF92084EF3354BE7F78F72 /* Pods */ = {
@@ -414,10 +422,10 @@
 				202E57791E9E4F9F0060DD4F /* MemberCreateViewController.swift in Sources */,
 				202FA4BA1E9D0EF200CC6523 /* SessionModel.swift in Sources */,
 				202E577D1E9E866B0060DD4F /* UserData.swift in Sources */,
-				202FA4BC1E9D176000CC6523 /* NetworkRequestable.swift in Sources */,
 				202FA4961E9D09CC00CC6523 /* AppDelegate.swift in Sources */,
 				2093B4F01E9D35AA0023246B /* SideMenuViewController.swift in Sources */,
 				202FA4C41E9D2F8400CC6523 /* Member.swift in Sources */,
+				20F8710C1E9FB15800EDEB12 /* NetworkProvider.swift in Sources */,
 				2093B4F41E9D3A8B0023246B /* LoginViewController.swift in Sources */,
 				202E577F1E9E86DE0060DD4F /* UserDefaultsExtension.swift in Sources */,
 			);

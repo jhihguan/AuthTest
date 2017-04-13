@@ -9,21 +9,30 @@
 import Foundation
 
 enum NetworkError: Error {
-    case serverError
-    case urlError
-    case responseError
-    case parameterError
+    case server
+    case status(status: Int)
+    case url
+    case response
+    case parameter
+    case token
+    case custom(message: String)
     
     var message: String {
         switch self {
-        case .serverError:
+        case .server:
             return "伺服器錯誤"
-        case .urlError:
+        case .status:
+            return "錯誤"
+        case .url:
             return "連結錯誤"
-        case .responseError:
+        case .response:
             return "回應格式錯誤"
-        case .parameterError:
+        case .parameter:
             return "參數錯誤"
+        case .token:
+            return "驗證錯誤"
+        case .custom(let message):
+            return message
         }
     }
 }

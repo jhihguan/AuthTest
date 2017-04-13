@@ -18,10 +18,10 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     let sideMenuDatas = ["取得會員列表", "新增會員", "登出"]
-    let session: UserSession
+    private let provider: NetworkProvider
     
-    init(_ session: UserSession) {
-        self.session = session
+    init(_ provider: NetworkProvider) {
+        self.provider = provider
         super.init(nibName: "\(SideMenuViewController.self)", bundle: nil)
     }
     
@@ -56,9 +56,9 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            self.slideMenuController()?.changeMainViewController(UINavigationController(rootViewController: MemberListViewController(session)), close: true)
+            self.slideMenuController()?.changeMainViewController(UINavigationController(rootViewController: MemberListViewController(provider)), close: true)
         case 1:
-            self.slideMenuController()?.changeMainViewController(UINavigationController(rootViewController: MemberCreateViewController(session)), close: true)
+            self.slideMenuController()?.changeMainViewController(UINavigationController(rootViewController: MemberCreateViewController(provider)), close: true)
         case 2:
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                 return
