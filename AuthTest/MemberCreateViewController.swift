@@ -49,7 +49,8 @@ class MemberCreateViewController: UIViewController, AlertShowable {
             if let error = error {
                 self?.showAlert(error.message)
             } else {
-                self?.showAlert("創建成功")
+                self?.nameTextField.text = ""
+                self?.showAlert("創建\(username)成功")
             }
         }
     }

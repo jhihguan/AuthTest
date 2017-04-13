@@ -63,6 +63,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                 return
             }
+            provider.logout()
             appDelegate.resetToLogin()
         default:
             break
